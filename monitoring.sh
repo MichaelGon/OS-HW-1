@@ -1,12 +1,13 @@
+#!/bin/bash
+
 PID_FILE="/tmp/monitor.pid"
 
 OUTPUT_DIR="./monitoring_logs"
 
 create_new_csv() {
     mkdir -p "$OUTPUT_DIR"
-    TIMESTAMP=$(date "+%Y%m%d_%H%M%S")
-    DATE=$(date "+%Y-%m-%d")
-    CSV_FILE="$OUTPUT_DIR/monitoring_$TIMESTAMP_$DATE.csv"
+    TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
+    CSV_FILE="$OUTPUT_DIR/monitoring_$TIMESTAMP.csv"
     echo "          Timestamp,    Used Space,  Free Inodes" > "$CSV_FILE"
 }
 
